@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}perSimmons - {{title}} {% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <h3>Admin Login</h3>
+</div>
+<form action="" method="post" name="login">
+  <p id="user-login">
+    Username:<br>
+    {{form.email}}<br>
+    Password:<br>
+    {{form.password}}<br>
+  </p>
+  <p><input type="submit" value="Log in">{{form.remember_me}}Stay signed-in </p>
+</form>
+{% endblock %}

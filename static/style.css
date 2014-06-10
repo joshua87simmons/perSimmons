@@ -3,11 +3,11 @@
 	src: url('fonts/SourceCodePro-Regular.otf.woff');
 	src: local('SourceCodePro Regular'), local('SourceCodePro'), url('fonts/SourceCodePro-Regular.otf.woff') format('truetype');
 }
-body            { font-family: sans-serif; background: #CC3300; }
+body            { font-family: 'SourceCodeProRegular'; background: #CC3300; }
 a, h1, h2       { color: #CC3300; }
 h1, h2          { font-family: 'SourceCodeProRegular'; margin: 0; }
 h1              { border-bottom: 2px solid #CC3300; }
-h2              { font-size: 1.2em; }
+h2              { font-size: 2em; font-weight: bold; }
 li  						{ color: #CC3300;}
 dl							{ color: #CC3300;}
 
@@ -15,9 +15,8 @@ dl							{ color: #CC3300;}
                   padding: 0.8em; background: #FFFF66; }
 .entries        { list-style: none; margin: 0; padding: 0; }
 .entries li     { margin: 0.8em 1.2em; }
-.entries li h2  { margin-left: -1em; }
+.entries li h2  { margin-left: -1em;}
 .add-entry      { font-size: 0.9em; border-bottom: 1px solid #CC3300; }
-.add-entry dl   { font-weight: bold; }
 .metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
                   margin-bottom: 1em; background: #FFFF66; }
 .flash          { font-color: #999966 ; font-family: 'SourceCodeProRegular'; background: #CC3300; padding: 0.5em;

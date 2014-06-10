@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<title>
+  {% block title %}
+  perSimmons
+  {% endblock %}
+</title>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <ul id="nav">
+    <li id="banner"><a href="{{ url_for('main.index') }}">{ perSimmons }</a></li>
+	  <li id="links"><a href="#">Blog</a></li>
+    <li id="links"><a href="#">Resume</a></li>
+	  <li id="links"><a href="#">Contact</a></li>
+    <li id="links"><a href="#">About</a></li>
+  </ul>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+
+  {% block body %}
+  {% endblock %}
+</div>

@@ -1,18 +1,19 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
-{% block title %}perSimmons - {{title}} {% endblock %}
-
-{% block body %}
-<div class="page-header">
-  <h3>Admin Login</h3>
+{% block page_content %}
+<div class="page">
+  <h2>Admin Login</h2><br>
+  <form action="" method="post" name="login">
+    {{form.csrf_token}}
+    <p id="user-login">
+      Username:<br>
+      {{form.email}}<br>
+      Password:<br>
+      {{form.password}}<br>
+    </p>
+    <div class=remember>
+      <input type="submit" value="Log in"> {{form.remember_me}} Stay signed-in</input></p>
+    </div>
+  </form>
 </div>
-<form action="" method="post" name="login">
-  <p id="user-login">
-    Username:<br>
-    {{form.email}}<br>
-    Password:<br>
-    {{form.password}}<br>
-  </p>
-  <p><input type="submit" value="Log in">{{form.remember_me}}Stay signed-in </p>
-</form>
 {% endblock %}

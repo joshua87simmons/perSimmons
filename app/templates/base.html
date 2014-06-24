@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='style.css')}}">
+{% endblock %}
+
+<title>
+  {% block title %}
+  perSimmons
+  {% endblock %}
+</title>
+
+{% block navbar %}
+  <div class="navbar">
+    <ul id="nav">
+      <li id="banner"><a href="{{ url_for('main.index') }}">{ perSimmons }</a></li>
+      <li id="links"><a href="#">Blog</a></li>
+      <li id="links"><a href="#">Resume</a></li>
+      <li id="links"><a href="#">Contact</a></li>
+      <li id="links"><a href="#">About</a></li>
+      {% if current_user.is_authenticated() %}
+        <li id="logout-link"><a href="{{ url_for('auth.logout') }}">logout</a></li>
+      {% endif %}
+    </ul>
+    <br>
+  </div>
+{% endblock %}
+
+{% block content%}
+  <div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="flash">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  <ul class="layout">
+    {% block page_content %}
+    {% endblock %}
+  </ul>
+{% endblock %}

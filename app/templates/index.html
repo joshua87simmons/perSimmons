@@ -1,4 +1,6 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
 
 <head>
   {% block title %}
@@ -10,6 +12,30 @@
   {% endblock %}
 </head>
 
-{% block body %}
-  Hello, test beyotch.
+{% block page_content %}
+
+  {% if current_user.is_authenticated() %}
+    <div class="page">
+      <ul id="post-form">
+        <form method="POST" id="post-form" name="add">
+          {{form.csrf_token}}
+          <p id="add-post">
+            {{ wtf.quick_form(form) }}
+          </p>
+        </form>
+      </ul>
+    </div>
+  {% endif %}
+
+  {% include '_posts.html' %}
+  <div>
+    <div class="pagination">
+      {{ macros.pagination_widget(pagination, '.index') }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
 {% endblock %}

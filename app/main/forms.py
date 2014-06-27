@@ -4,6 +4,6 @@ from wtforms.validators import Required
 from flask.ext.pagedown.fields import PageDownField
 
 class PostForm(Form):
-  title = StringField('Title', validators = [Required()])
-  body = PageDownField("What's on ya mind?", validators = [Required()])
-  submit = SubmitField('Submit Post')
+  title = StringField(validators = [Required()])
+  body = PageDownField(validators = [Required()])
+  submit = SubmitField('Submit')

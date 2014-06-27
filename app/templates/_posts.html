@@ -11,11 +11,18 @@
             {{post.body}}
           {% endif %}
         </div><br>
-        <div class="delete">
+        <div class="footer">
+          {% if current_user.is_authenticated() %}
           <a href="{{ url_for('main.delete', post_id=post.id) }}">Delete</a>
+          {% endif %}
           <a href="{{ url_for('.post', id=post.id) }}">
             <span class="label">Permalink</span>
           </a>
+          {% if current_user.is_authenticated() %}
+          <a href="{{ url_for('.edit', id=post.id) }}">
+            <span class="label">Edit</span>
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>

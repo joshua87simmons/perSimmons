@@ -16,7 +16,7 @@
 
   {% if current_user.is_authenticated() %}
     <div class="page">
-      <ul id="post-form">
+      <ul class="forms">
         <form method="POST" id="post-form" name="add">
           {{form.csrf_token}}
           <p id="add-post">
@@ -37,5 +37,6 @@
 
 {% block scripts %}
 {{ super() }}
+{{ moment.include_moment() }}
 {{ pagedown.include_pagedown() }}
 {% endblock %}

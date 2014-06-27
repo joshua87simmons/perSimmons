@@ -19,10 +19,10 @@
   <div class="navbar">
     <ul id="nav">
       <li id="banner"><a href="{{ url_for('main.index') }}">{ perSimmons }</a></li>
-      <li id="links"><a href="#">Blog</a></li>
+      <li id="links"><a href="{{ url_for('main.index') }}">Blog</a></li>
       <li id="links"><a href="#">Resume</a></li>
       <li id="links"><a href="#">Contact</a></li>
-      <li id="links"><a href="#">About</a></li>
+      <li id="links"><a href="{{ url_for('main.about') }}">About</a></li>
       {% if current_user.is_authenticated() %}
         <li id="logout-link"><a href="{{ url_for('auth.logout') }}">logout</a></li>
       {% endif %}

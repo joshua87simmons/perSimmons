@@ -30,6 +30,10 @@ li	{ color: #CC3300;}
 dl	{ color: #CC3300;}
 p	{ color: #CC3300;}
 
+#edit-form{
+	color: #CC3300;
+}
+
 #links{
 	float: left;
 }
@@ -69,8 +73,12 @@ p	{ color: #CC3300;}
 	font-size: 1em;
 }
 
-.delete {
+.footer {
 	font-size: .8em;
+}
+
+.forms {
+	color: #CC3300;
 }
 
 .navbar{
@@ -104,6 +112,10 @@ p	{ color: #CC3300;}
   padding: 0.8em;
 	background: #FFFF66;
 	}
+
+.page-header {
+	color: #CC3300;
+}
 
 
 .post-body {
